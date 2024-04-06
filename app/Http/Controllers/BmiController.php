@@ -24,6 +24,16 @@ class BmiController extends Controller
         $height = $request->height / 100; // converting to meters
         $bmi = $weight / ($height * $height);
 
-        return view('bmi.result', compact('bmi'));
+        if ($bmi < 18.5) {
+            $category = 'Underweight';
+        }else if ($bmi < 24.9) {
+            $category = 'Normal weight';
+        } else if ($bmi < 29.9) {
+            $category = 'Overweight';
+        } else {
+            $category = 'Obese';
+        }
+
+        return view('bmi.result', compact('bmi','category'));
     }
 }
