@@ -67,10 +67,9 @@
     <div class="container">
         <h1>BMI</h1>    
         <!-- Foto Diri -->
-        <!-- Anda dapat menggunakan tag img untuk menampilkan foto diri -->
-        <img src="https://drive.google.com/file/d/1V2MlNKSFm9Ae-UEb17ElTr7fOmE-FjtI/view?usp=sharing" alt="Your Photo" width="150">
+        <img src="..." alt="Your Photo" width="150">
 
-        <!-- Teks: Halo (Nama User) -->
+      
         <!-- Pastikan variabel $name sudah diset di dalam controller dengan nama pengguna yang sesuai -->
         <p>Halo Atiyah</p>
 
