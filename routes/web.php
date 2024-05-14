@@ -9,3 +9,11 @@ Route::get('/bmi/create', [BMIController::class, 'create'])->name('bmi.create');
 Route::post('/bmi/calculate', [BMIController::class, 'calculate'])->name('bmi.calculate');
 Route::get('/food/create', [FoodController::class, 'create'])->name('food.create');
 Route::post('/food/store', [FoodController::class, 'store'])->name('food.store');
+
+Route::get('/mainpage', function () {
+    return view ('mainpage');
+});
+
+Route::get('/homepage', function () {
+    return view ('homepage');
+});
