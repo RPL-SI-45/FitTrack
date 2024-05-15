@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
+  <title>FitHealth</title>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -61,14 +61,14 @@
     <div>
     <ul class="navbar-nav">
       <li class="nav-item">
-        <form id="login-form" action="/Login" method="post">
+        <form id="login-form" action="/login" method="post">
           @csrf
           <input type="hidden" name="login" value="1">
           <button type="submit" class="btn btn-link nav-link">Log in</button>
         </form>
       </li>
       <li class="nav-item">
-        <form id="signup-form" action="/Signup" method="post">
+        <form id="signup-form" action="/signup" method="post">
           @csrf
           <input type="hidden" name="signup" value="1">
           <button type="submit" class="btn btn-link nav-link">Sign up</button>

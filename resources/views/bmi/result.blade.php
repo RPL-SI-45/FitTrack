@@ -95,7 +95,7 @@
         <p class="card-text">{{ $category }}</p>
       </div>
     </div>
-    <button type="button" class="btn btn-primary mt-3">OK</button>
+    <button type="button" class="btn btn-primary mt-3" onclick="window.location.href='/homepage'">OK</button>
   </div>
 </body>
 </html>

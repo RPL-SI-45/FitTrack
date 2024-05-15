@@ -8,10 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class BodyMassIndex extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'Weight', 
-        'Height', 
-        'Age',
-        'Activity'
-    ];
+
+    protected $fillable = ['weight', 'height', 'age', 'activity_level'];
 }
