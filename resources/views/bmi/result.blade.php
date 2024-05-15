@@ -2,11 +2,16 @@
 <html>
 <head>
   <title>BMI</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
+      font-family: 'Poppins', sans-serif; /* Changed font family */
+      background: linear-gradient(45deg, #FDFFC2, #A3D8FF);
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .container {
@@ -16,12 +21,11 @@
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
       text-align: center;
       max-width: 400px;
-      margin: auto;
       margin-top: 50px;
     }
 
     h1 {
-      color: #4CAF50;
+      color: #FF76CE;
       margin-bottom: 20px;
     }
 
@@ -36,7 +40,7 @@
       margin-top: 10px;
       margin-bottom: 5px;
       font-size: 18px;
-      color: #666;
+      color: #333;
     }
 
     .card {
@@ -50,8 +54,8 @@
     }
 
     .card-title {
-      color: #6C757D;
-      font-size: 16px;
+      color: #FF76CE;
+      font-size: 24px;
       margin-bottom: 5px;
     }
 
@@ -62,8 +66,9 @@
     }
 
     .btn-primary {
-      background-color: #007BFF;
-      border-color: #007BFF;
+      background-color: #A3D8FF;
+      border-color: #A3D8FF;
+      width: 100%;
     }
 
     .btn-primary:hover {
@@ -73,7 +78,7 @@
 
     .title {
       font-size: 16px;
-      color: #6C757D;
+      color: #FF76CE;
       margin-bottom: 5px;
     }
   </style>
