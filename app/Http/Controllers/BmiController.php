@@ -24,8 +24,6 @@ class BmiController extends Controller
         ]);
 
         // Simpan data ke dalam database
-        $bmiRecord = BodyMassIndex ::create($validatedData);
-
         $weight = $validatedData['weight'];
         $height = $validatedData['height'] / 100; // converting to meters
         $bmi = $weight / ($height * $height);
@@ -39,6 +37,15 @@ class BmiController extends Controller
         } else {
             $category = 'Obese';
         }
+
+        $bmiRecord = BodyMassIndex::create([
+            'weight' => $weight,
+            'height' => $validatedData['height'],
+            'age' => $validatedData['age'],
+            'activity_level' => $validatedData['activity_level'],
+            'bmi' => $bmi,
+            'category' => $category,
+            ]);
 
         return view('bmi.result', compact('bmi', 'category'));
     }

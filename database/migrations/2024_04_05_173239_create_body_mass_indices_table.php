@@ -18,6 +18,8 @@ return new class extends Migration
             $table->float('height');
             $table->integer('age');
             $table->enum('activity_level', ['Minimum', 'Tidak', '1-3x', '3-4x', '6-7x']);
+            $table->string('category');
+            $table->float('bmi');
             $table->timestamps();        });
     }
 
