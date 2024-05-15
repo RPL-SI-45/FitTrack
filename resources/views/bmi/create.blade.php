@@ -93,7 +93,7 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="bmi-title mb-4">BMI</h1>
+        <h1 class="bmi-title mb-4">BMI Calculator</h1>
 
         <div class="profile-info">
             <img src="{{ asset('img/atiyah.jpg') }}" alt="Your Photo" class="profile-img">
