@@ -4,22 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMI Calculator</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-        }
-
-        .container {
-            background-color: #e9ecef;
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            max-width: 400px;
-            margin: auto;
-            margin-top: 50px;
+            font-family: 'Poppins', sans-serif; /* Changed font family */
+            background: linear-gradient(45deg, #FDFFC2, #A3D8FF);
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .profile-info {
@@ -29,22 +24,33 @@
             align-items: center;
         }
 
-        .profile-info h2 {
-            color: #6DC5D1;
-            font-size: 25px; /* Sesuaikan ukuran teks */
-            margin-left: 8px;
+        .profile-info img {
+            width: 50px; /* Adjusted Profile image size */
+            height: 50px; /* Adjusted Profile image size */
+            margin-right: 10px;
+            border-radius: 50%; /* Make the image circular */
         }
 
-        img {
-            width: 80px; /* Ubah ukuran foto profil */
-            height: 80px; /* Ubah ukuran foto profil */
-            margin-right: 10px;
+        .profile-info p {
+            color: #333;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .slogan {
+            color: #666;
+            font-size: 16px;
+            margin-top: 10px;
+            text-align: center; /* Center the slogan */
         }
 
         .bmi-title {
-            color: #4CAF50;
+            color: #FF76CE;
             font-size: 35px;
             margin-bottom: 20px;
+            text-align: center; /* Center the title */
+            width: 100%; /* Full width */
+            font-weight: bold; /* Bold title */
         }
 
         input[type="text"],
@@ -58,7 +64,7 @@
         }
 
         button {
-            background-color: #4CAF50;
+            background-color: #A3D8FF; /* Updated button color */
             color: white;
             padding: 14px 20px;
             margin: 20px 0;
@@ -70,12 +76,18 @@
         }
 
         button:hover {
-            background-color: #45a049;
+            background-color: #0056b3;
         }
 
         p {
             margin-top: 20px;
             color: #666;
+            font-weight: bold; /* Bold the footer slogan */
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
         }
     </style>
 </head>
@@ -84,10 +96,11 @@
         <h1 class="bmi-title mb-4">BMI</h1>
 
         <div class="profile-info">
-        <img src="{{ asset('img/atiyah.jpg') }}" alt="Your Photo" style="height: 85px; width: 85px; object-fit: cover; border-radius: 50%;">
-        <p>Halo, Atiyah</p>
+            <img src="{{ asset('img/atiyah.jpg') }}" alt="Your Photo" class="profile-img">
+            <p>Halo, Atiyah</p>
         </div>
-        
+        <p class="slogan">Measure, know, and make changes</p>
+
         <form method="post" action="{{ route('bmi.calculate') }}">
             @csrf
             <div class="form-group">
@@ -111,6 +124,7 @@
             </div>
             <button type="submit" class="btn btn-primary">Calculate</button>
         </form>
+        <p class="slogan mt-3">Track your health, transform your life with FitHealth</p>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

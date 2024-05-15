@@ -9,6 +9,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <style>
+    
     .navbar-brand {
       display: flex;
       align-items: center;
@@ -21,7 +22,7 @@
 
     .slogan {
       font-size: 14px;
-      color: #aaa;
+      color: #ff6347; /* Tomato color */
     }
 
     .social-media img {
@@ -43,12 +44,59 @@
       font-size: 24px;
       color: #007bff;
     }
+
+    .profile-img {
+      height: 30px; /* Profile image size */
+      width: 30px;  /* Profile image size */
+      border-radius: 50%; /* Make the image circular */
+    }
+
+    .profile-dropdown .dropdown-menu {
+      right: 0;
+      left: auto;
+    }
+
+    .profile-header {
+      display: flex;
+
+      align-items: center;
+      padding: 10px 20px;
+      border-bottom: 1px solid #e9ecef;
+    }
+
+    .profile-header img {
+      margin-right: 10px;
+      border-radius: 50%; /* Make the image circular */
+    }
+
+    .profile-header span {
+      font-weight: bold;
+    }
+
+    .navbar, footer {
+      background-color: #FFD0D0;
+    }
+
+    footer {
+      color: white;
+      padding: 20px 0;
+    }
+
+    .social-media a {
+      margin: 0 10px;
+    }
+
+    .slogan {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #ff6347; /* Tomato color */
+    }
   </style>
 </head>
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
       <img src="img/FitHealth_Logo.png" alt="Logo">
@@ -87,12 +135,22 @@
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <form id="logout-form" action="/mainpage" method="post">
-            @csrf
-            <input type="hidden" name="logout" value="1">
-            <button type="submit" class="btn btn-link nav-link">Logout</button>
-          </form>
+        <li class="nav-item dropdown profile-dropdown">
+          <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdownProfile" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="img/atiyah.jpg" alt="Profile" class="profile-img">
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownProfile">
+            <div class="profile-header">
+              <img src="img/atiyah.jpg" alt="Profile" class="profile-img">
+              <span>Michelle</span>
+            </div>
+            <a class="dropdown-item" href="/edit-profile">Edit Profile</a>
+            <form id="logout-form" action="/mainpage" method="post">
+              @csrf
+              <input type="hidden" name="logout" value="1">
+              <button type="submit" class="dropdown-item">Logout</button>
+            </form>
+          </div>
         </li>
       </ul>
     </div>
@@ -150,12 +208,12 @@
 </div>
 
 <!-- Footer -->
-<footer class="bg-dark text-white mt-5">
+<footer class="mt-5">
   <div class="container text-center">
     <div class="social-media">
-      <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
-      <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
-      <a href="#"><img src="img/twitter.png" alt="Twitter"></a>
+      <a href="#"><img src="img/facebook_bw.png" alt="Facebook"></a>
+      <a href="#"><img src="img/instagram_bw.png" alt="Instagram"></a>
+      <a href="#"><img src="img/twitter_bw.png" alt="Twitter"></a>
     </div>
     <p class="slogan mt-3">Track your health, transform your life with FitHealth</p>
   </div>
