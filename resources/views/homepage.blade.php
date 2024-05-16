@@ -68,7 +68,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownFeatures">
             <a class="dropdown-item" href="/bmi/create">BMI Tracker</a>
-            <a class="dropdown-item" href="#">Hydration Monitor</a>
+            <a class="dropdown-item" href="/targets">Hydration Monitor</a>
             <a class="dropdown-item" href="#">Daily Nutrition Target</a>
             <a class="dropdown-item" href="#">Medication Reminder</a>
             <a class="dropdown-item" href="#">Friend Challenge</a>

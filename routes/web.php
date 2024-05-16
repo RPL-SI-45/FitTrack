@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BmiController;
 use App\Http\Controllers\FoodController;
+use App\Http\Controllers\TargetController;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Routing\Annotation\Route as AnnotationRoute;
 
@@ -18,3 +19,4 @@ Route::any('/signup', function  () { return view ('signup');   });
 
 Route::any('/login', function ()    { return view ('login');    });
 
+Route::resource('targets', TargetController::class);
