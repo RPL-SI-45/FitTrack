@@ -121,7 +121,7 @@
       </div>
       <div class="card">
         <div class="card-body">
-          <h5 class="content-title">Target Minum Perhari</h5>
+          <h5 class="content-title" href="/targets">Target Minum Perhari</h5>
           <p>Stay hydrated by setting and tracking daily water intake goals.</p>
         </div>
       </div>
