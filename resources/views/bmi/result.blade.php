@@ -12,21 +12,37 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column; /* Changed flex-direction to column */
     }
 
-    .container {
-      background-color: #f8f9fa;
-      border-radius: 8px;
-      padding: 30px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      max-width: 400px;
-      margin-top: 50px;
-    }
+    .profile-info {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-info img {
+            width: 50px; /* Adjusted Profile image size */
+            height: 50px; /* Adjusted Profile image size */
+            margin-right: 10px;
+            border-radius: 50%; /* Make the image circular */
+        }
+
+        .profile-info p {
+            color: #333;
+            font-size: 24px;
+            margin: 0;
+        }
 
     h1 {
       color: #FF76CE;
       margin-bottom: 20px;
+    }
+
+    .center {
+      display: flex;
+      align-items: center;
     }
 
     img {
@@ -50,19 +66,17 @@
     }
 
     .card-body {
-      padding: 20px;
+      width: 100%;
+      padding: 1px;
     }
 
     .card-title {
+      font-family: 'Poppins', sans-serif; /* Changed font family */
       color: #FF76CE;
       font-size: 24px;
       margin-bottom: 5px;
-    }
-
-    .card-text {
-      font-size: 20px;
-      font-weight: bold;
-      color: #333;
+      font-weight: bold; /* Bold title */
+      font-family: 'Poppins', sans-serif; /* Changed font family */
     }
 
     .btn-primary {
@@ -80,14 +94,44 @@
       font-size: 16px;
       color: #FF76CE;
       margin-bottom: 5px;
+      font-weight: bold; /* Bold title */
+      font-family: 'Poppins', sans-serif; /* Changed font family */
+    }
+
+    .slogan {
+            color: #666;
+            font-size: 16px;
+            margin-top: 10px;
+            text-align: center; /* Center the slogan */
+        }
+    
+    p {
+            margin-top: 20px;
+            color: #666;
+            font-weight: bold; /* Bold the footer slogan */
+        }
+
+
+    /* Custom input width */
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>BMI</h1>
-    <img src="{{ asset('img/atiyah.jpg') }}" alt="Your Photo" style="height: 85px; width: 85px; object-fit: cover; border-radius: 50%;">
-    <p>Halo, Atiyah</p>
+    <h1 class="text-center">BMI</h1>
+    <div class="profile-info">
+      <img src="{{ asset('img/atiyah.jpg') }}" alt="Your Photo" class="profile-img">
+      <p>Halo, Atiyah</p>
+    </div>
+      <p class="slogan">Measure, know, and make changes</p>
     <h5 class="title">Your BMI</h5>
     <div class="card text-center">
       <div class="card-body">
@@ -101,6 +145,7 @@
       </div>
     </div>
     <button type="button" class="btn btn-primary mt-3" onclick="window.location.href='/homepage'">OK</button>
+    <p class="slogan mt-3">Track your health, transform your life with FitHealth</p>
   </div>
 </body>
 </html>
