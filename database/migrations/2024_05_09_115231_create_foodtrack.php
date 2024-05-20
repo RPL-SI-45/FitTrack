@@ -11,20 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-<<<<<<< HEAD:database/migrations/2024_05_09_115231_create_foodtrack.php
-<<<<<<<< HEAD:database/migrations/2024_05_09_115231_create_foodtrack.php
         Schema::create('foodtrack', function (Blueprint $table) {
             $table->id();
-========
-        Schema::create('login_tabel', function (Blueprint $table) {
-            $table->id();
-            $table->string('email')->nullable();
-            $table->string('password')->nullable();
->>>>>>>> c252763f213ebff2f58c94af72d2432e7f954551:database/migrations/2024_04_16_095520_create_login_tabel.php
-=======
-        Schema::create('foodtrack', function (Blueprint $table) {
-            $table->id();
->>>>>>> c252763f213ebff2f58c94af72d2432e7f954551:FitTrack/database/migrations/2024_05_09_115231_create_foodtrack.php
             $table->timestamps();
         });
     }
@@ -34,14 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-<<<<<<< HEAD:database/migrations/2024_05_09_115231_create_foodtrack.php
-<<<<<<<< HEAD:database/migrations/2024_05_09_115231_create_foodtrack.php
         Schema::dropIfExists('foodtrack');
-========
-        Schema::dropIfExists('login_tabel');
->>>>>>>> c252763f213ebff2f58c94af72d2432e7f954551:database/migrations/2024_04_16_095520_create_login_tabel.php
-=======
-        Schema::dropIfExists('foodtrack');
->>>>>>> c252763f213ebff2f58c94af72d2432e7f954551:FitTrack/database/migrations/2024_05_09_115231_create_foodtrack.php
     }
 };
