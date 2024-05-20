@@ -97,7 +97,7 @@
 
         <div class="profile-info">
             <img src="{{ asset('img/atiyah.jpg') }}" alt="Your Photo" class="profile-img">
-            <p>Halo, Atiyah</p>
+            <p>Halo, Michelle</p>
         </div>
         <p class="slogan">Measure, know, and make changes</p>
 

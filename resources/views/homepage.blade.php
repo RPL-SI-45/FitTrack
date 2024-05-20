@@ -164,47 +164,54 @@
     <h2>Welcome to FitHealth</h2>
   </div>
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4">
       <div class="card">
-        <div class="card-body">
-          <h5 class="content-title">History BMI</h5>
-          <p>Track your BMI history to monitor your health progress.</p>
+        <div class="card-header">
+          Challenge
         </div>
-      </div>
-      <div class="card">
         <div class="card-body">
-          <h5 class="content-title">Reminder Minum Obat</h5>
-          <p>Get reminders to take your medication on time.</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="content-title">Target Minum Perhari</h5>
-          <p>Stay hydrated by setting and tracking daily water intake goals.</p>
+          <p class="card-text">Here you can view and join challenges to stay motivated.</p>
+          <a href="#" class="btn btn-danger">View Challenges</a>
         </div>
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
       <div class="card">
+        <div class="card-header">
+          History Calorie
+        </div>
         <div class="card-body">
-          <h5 class="content-title">Target Makan Perhari</h5>
-          <p>Achieve your nutrition goals by tracking daily food intake.</p>
+          <p class="card-text">Track your daily calorie intake and view your history.</p>
+          <a href="#" class="btn btn-danger">View History</a>
         </div>
       </div>
+    </div>
+    <div class="col-md-4">
       <div class="card">
-        <div class="card-body">
-          <h5 class="content-title">Challenge Today</h5>
-          <p>Participate in daily health challenges to stay motivated.</p>
+        <div class="card-header">
+          Medication Reminder
         </div>
-      </div>
-      <div class="card">
         <div class="card-body">
-          <h5 class="content-title">Health Articles</h5>
-          <p>Read the latest articles on health and wellness.</p>
+          <p class="card-text">Stay on track with your medication schedule.</p>
+          <a href="#" class="btn btn-danger">View Schedule</a>
         </div>
       </div>
     </div>
   </div>
+  <div class="row mt-4">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          Articles
+        </div>
+        <div class="card-body">
+          <p class="card-text">Read our latest articles on fitness and health.</p>
+          <a href="#" class="btn btn-danger">Read Articles</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 
 <!-- Footer -->

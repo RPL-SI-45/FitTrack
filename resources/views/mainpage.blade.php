@@ -74,6 +74,20 @@
       font-size: 14px;
       color: #ff6347; /* Tomato color */
     }
+
+    .footer-links {
+      margin: 10px 0;
+    }
+
+    .footer-links a {
+      color: white;
+      display: block;
+    }
+
+    .footer-logo {
+      height: 30px;
+      margin: 0 10px;
+    }
   </style>
 </head>
 <body>
@@ -129,7 +143,47 @@
   <div class="row">
     <div class="col-md-12">
       <h1>Welcome to FitHealth</h1>
-      <!-- Your main content goes here -->
+      <!-- Main content -->
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="content-title">Search</h5>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2 w-75" type="search" placeholder="Search for health tips, articles, and more" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="content-title">Drink Target</h5>
+              <p>Stay hydrated by setting and tracking daily water intake goals.</p>
+            </div>
+          </div>
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="content-title">Challenge</h5>
+              <p>Participate in daily health challenges to stay motivated.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="content-title">Medication Reminder</h5>
+              <p>Get reminders to take your medication on time.</p>
+            </div>
+          </div>
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="content-title">Article</h5>
+              <p>Read the latest articles on health and wellness.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -138,9 +192,18 @@
 <footer class="mt-5">
   <div class="container text-center">
     <div class="social-media">
-      <a href="#"><img src="img/facebook_bw.png" alt="Facebook"></a>
-      <a href="#"><img src="img/instagram_bw.png" alt="Instagram"></a>
-      <a href="#"><img src="img/twitter_bw.png" alt="Twitter"></a>
+      <a href="#"><img src="img/facebook_bw.png" alt="Facebook" class="footer-logo"></a>
+      <a href="#"><img src="img/instagram_bw.png" alt="Instagram" class="footer-logo"></a>
+      <a href="#"><img src="img/twitter_bw.png" alt="Twitter" class="footer-logo"></a>
+      <a href="#"><img src="img/youtube.png" alt="Youtube" class="footer-logo"></a>
+      <a href="#"><img src="img/tiktok.png" alt="Tiktok" class="footer-logo"></a>
+    </div>
+    <div class="footer-links mt-3">
+      <a href="#">About FitHealth</a>
+      <a href="#">Hubungi kami</a>
+      <a href="#">Syarat dan ketentuan</a>
+      <a href="#">Kebijakan Privasi</a>
+      <a href="#">Berita dan Media</a>
     </div>
     <p class="slogan mt-3">Track your health, transform your life with FitHealth</p>
   </div>

@@ -129,7 +129,7 @@
     <h1 class="text-center">BMI</h1>
     <div class="profile-info">
       <img src="{{ asset('img/atiyah.jpg') }}" alt="Your Photo" class="profile-img">
-      <p>Halo, Atiyah</p>
+      <p>Halo, Michelle</p>
     </div>
       <p class="slogan">Measure, know, and make changes</p>
     <h5 class="title">Your BMI</h5>
