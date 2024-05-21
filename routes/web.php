@@ -10,11 +10,11 @@ Route::post('/bmi/calculate', [BMIController::class, 'calculate'])->name('bmi.ca
 Route::get('/food/create', [FoodController::class, 'create'])->name('food.create');
 Route::post('/food/store', [FoodController::class, 'store'])->name('food.store');
 
-Route::any('/mainpage', function () { return view ('mainpage'); });
+Route::any('/FitHealth/mainpage', function () { return view ('FitHealth.mainpage'); });
 
-Route::get('/homepage', function () { return view ('homepage'); });
+Route::get('/FitHealth/homepage', function () { return view ('FitHealth.homepage'); });
 
-Route::any('/signup', function  () { return view ('signup');   });
+Route::any('/user/register', function  () { return view ('user.register');   });
 
-Route::any('/login', function ()    { return view ('login');    });
+Route::any('/user/login', function ()    { return view ('user.login');    });
 
