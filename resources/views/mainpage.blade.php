@@ -120,14 +120,14 @@
       </form>
       <ul class="navbar-nav">
         <li class="nav-item">
-          <form id="login-form" action="/login" method="post">
+          <form id="login-form" action="/sesi" method="post">
             @csrf
             <input type="hidden" name="login" value="1">
             <button type="submit" class="btn btn-link nav-link">Log in</button>
           </form>
         </li>
         <li class="nav-item">
-          <form id="signup-form" action="/signup" method="post">
+          <form id="signup-form" action="/register" method="post">
             @csrf
             <input type="hidden" name="signup" value="1">
             <button type="submit" class="btn btn-link nav-link">Sign up</button>
