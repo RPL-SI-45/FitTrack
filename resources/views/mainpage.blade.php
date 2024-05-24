@@ -19,6 +19,15 @@
       margin-right: 10px;
     }
 
+    .navbar {
+      background-color: #FFD0D0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-nav .nav-link {
+      font-weight: bold;
+    }
+
     .slogan {
       font-size: 14px;
       color: #ff6347; /* Tomato color */
@@ -56,12 +65,9 @@
       font-weight: bold;
     }
 
-    .navbar, footer {
-      background-color: #FFD0D0;
-    }
-
     footer {
-      color: white;
+      background-color: #FFFFFF;
+      color: #333;
       padding: 20px 0;
     }
 
@@ -69,24 +75,43 @@
       margin: 0 10px;
     }
 
-    .slogan {
-      margin-top: 10px;
-      font-size: 14px;
-      color: #ff6347; /* Tomato color */
-    }
-
     .footer-links {
       margin: 10px 0;
     }
 
     .footer-links a {
-      color: white;
+      color: #333;
       display: block;
     }
 
     .footer-logo {
       height: 30px;
       margin: 0 10px;
+    }
+
+    .card {
+      border: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .content-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .container {
+      max-width: 960px;
+    }
+
+    .btn-outline-success {
+      color: #ff6347;
+      border-color: #ff6347;
+    }
+
+    .btn-outline-success:hover {
+      background-color: #ff6347;
+      color: white;
     }
   </style>
 </head>
@@ -118,18 +143,17 @@
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
+      <!-- Login and Signup Forms -->
       <ul class="navbar-nav">
         <li class="nav-item">
-          <form id="login-form" action="/sesi" method="post">
-            @csrf
-            <input type="hidden" name="login" value="1">
+          <!-- Login Form -->
+          <form id="login-form" action="/sesi" method="get">
             <button type="submit" class="btn btn-link nav-link">Log in</button>
           </form>
         </li>
         <li class="nav-item">
-          <form id="signup-form" action="/register" method="post">
-            @csrf
-            <input type="hidden" name="signup" value="1">
+          <!-- Signup Form -->
+          <form id="signup-form" action="/register" method="get">
             <button type="submit" class="btn btn-link nav-link">Sign up</button>
           </form>
         </li>

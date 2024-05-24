@@ -11,7 +11,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('users.login', compact('users'));
+        return view('sesi.login', compact('users'));
     }
 
     // Menampilkan formulir untuk membuat pengguna baru
@@ -35,7 +35,7 @@ class UserController extends Controller
             'password' => bcrypt($request->password),
         ]);
 
-        return redirect()->route('users.login')->with('success', 'User created successfully.');
+        return redirect()->route('sesi.login')->with('success', 'User created successfully.');
     }
 
     // Menampilkan detail pengguna
