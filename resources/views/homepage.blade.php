@@ -119,8 +119,8 @@
             <a class="dropdown-item" href="#">Hydration Monitor</a>
             <a class="dropdown-item" href="#">Food Track</a>
             <a class="dropdown-item" href="#">Medication Reminder</a>
-            <a class="dropdown-item" href="#">Friend Challenge</a>
-            <a class="dropdown-item" href="#">Health Articles</a>
+            <a class="dropdown-item" href="#">Challenge</a>
+            <a class="dropdown-item" href="#">Articles</a>
           </div>
         </li>
         <li class="nav-item">
