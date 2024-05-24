@@ -8,22 +8,26 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     * @return void
      */
     public function up(): void
     {
         Schema::create('body_mass_indices', function (Blueprint $table) {
             $table->id();
-            $table->float('weight', 5, 2);
-            $table->float('height', 5, 2);
+            $table->float('weight');
+            $table->float('height');
             $table->integer('age');
             $table->enum('activity_level', ['Minimum', 'Tidak', '1-3x', '3-4x', '6-7x']);
+            $table->string('category');
+            $table->float('bmi');
             $table->timestamps();        });
     }
 
     /**
      * Reverse the migrations.
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('body_mass_indices');
     }
