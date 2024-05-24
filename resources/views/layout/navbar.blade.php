@@ -154,7 +154,7 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdownFeatures">
             <a class="dropdown-item" href="/bmi/create">BMI Tracker</a>
             <a class="dropdown-item" href="#">Hydration Monitor</a>
-            <a class="dropdown-item" href="#">Food Track</a>
+            <a class="dropdown-item" href="/food/list">Food Track</a>
             <a class="dropdown-item" href="#">Medication Reminder</a>
             <a class="dropdown-item" href="#">Challenge</a>
             <a class="dropdown-item" href="#">Articles</a>
