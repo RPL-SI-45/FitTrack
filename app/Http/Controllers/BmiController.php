@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\BmiRecord;
+use App\Models\body_mass_indices;
+use App\Models\BodyMassIndex;
 
 class BmiController extends Controller
 {
@@ -13,20 +16,21 @@ class BmiController extends Controller
 
     public function calculate(Request $request)
     {
-        $request->validate([
+        $validatedData = $request->validate([
             'weight' => 'required|numeric',
             'height' => 'required|numeric',
             'age' => 'required|numeric',
             'activity_level' => 'required',
         ]);
 
-        $weight = $request->weight;
-        $height = $request->height / 100; // converting to meters
+        // Simpan data ke dalam database
+        $weight = $validatedData['weight'];
+        $height = $validatedData['height'] / 100; // converting to meters
         $bmi = $weight / ($height * $height);
 
         if ($bmi < 18.5) {
             $category = 'Underweight';
-        }else if ($bmi < 24.9) {
+        } else if ($bmi < 24.9) {
             $category = 'Normal weight';
         } else if ($bmi < 29.9) {
             $category = 'Overweight';
@@ -34,6 +38,15 @@ class BmiController extends Controller
             $category = 'Obese';
         }
 
-        return view('bmi.result', compact('bmi','category'));
+        $bmiRecord = BodyMassIndex::create([
+            'weight' => $weight,
+            'height' => $validatedData['height'],
+            'age' => $validatedData['age'],
+            'activity_level' => $validatedData['activity_level'],
+            'bmi' => $bmi,
+            'category' => $category,
+            ]);
+
+        return view('bmi.result', compact('bmi', 'category'));
     }
 }

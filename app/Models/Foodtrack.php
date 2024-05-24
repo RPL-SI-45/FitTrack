@@ -5,9 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BodyMassIndex extends Model
+class Foodtrack extends Model
 {
     use HasFactory;
-
-    protected $fillable = ['weight', 'height', 'age', 'activity_level','category','bmi'];
+    
 }
