@@ -21,8 +21,13 @@ Route::get('/bmi/create', [BmiController::class, 'create'])->name('bmi.create');
 Route::post('/bmi/calculate', [BmiController::class, 'calculate'])->name('bmi.calculate');
 
 /* Food Target */
+Route::get('/food/list', [FoodController::class, 'list'])->name('food');
 Route::get('/food/create', [FoodController::class, 'create'])->name('food.create');
 Route::post('/food/store', [FoodController::class, 'store'])->name('food.store');
+Route::get('/food/get/{id}', [FoodController::class, 'show'])->name('food.get');
+Route::post('/food/edit/{id}', [FoodController::class, 'update'])->name('food.edit');
+Route::get('/food/delete/{id}', [FoodController::class, 'delete'])->name('food.delete');
+Route::get('/homepage', function () { return view ('homepage'); })->name('home');
 
 /* FitHealth */
 Route::any('/', function () {
