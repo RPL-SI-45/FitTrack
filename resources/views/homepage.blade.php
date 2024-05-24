@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FitHealth</title>
+  <title>FITHELATH</title>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -117,7 +117,7 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdownFeatures">
             <a class="dropdown-item" href="/bmi/create">BMI Tracker</a>
             <a class="dropdown-item" href="#">Hydration Monitor</a>
-            <a class="dropdown-item" href="#">Daily Nutrition Target</a>
+            <a class="dropdown-item" href="#">Food Track</a>
             <a class="dropdown-item" href="#">Medication Reminder</a>
             <a class="dropdown-item" href="#">Friend Challenge</a>
             <a class="dropdown-item" href="#">Health Articles</a>
