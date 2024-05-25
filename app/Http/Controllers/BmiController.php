@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\BmiRecord;
-use App\Models\body_mass_indices;
 use App\Models\BodyMassIndex;
 
 class BmiController extends Controller
