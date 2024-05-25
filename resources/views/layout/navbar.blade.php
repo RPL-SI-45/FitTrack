@@ -145,7 +145,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link" href="/homepage">Home</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownFeatures" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -154,7 +154,7 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdownFeatures">
             <a class="dropdown-item" href="/bmi/create">BMI Tracker</a>
             <a class="dropdown-item" href="#">Hydration Monitor</a>
-            <a class="dropdown-item" href="#">Food Track</a>
+            <a class="dropdown-item" href="/food/list">Food Track</a>
             <a class="dropdown-item" href="#">Medication Reminder</a>
             <a class="dropdown-item" href="#">Challenge</a>
             <a class="dropdown-item" href="#">Articles</a>
