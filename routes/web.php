@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BmiController;
 use App\Http\Controllers\FoodController;
+use App\Http\Controllers\FoodTrackController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
@@ -36,3 +37,6 @@ Route::any('/', function () {
 Route::get('/homepage', function () {
     return view('homepage');
 });
+
+/* Food Tracks */
+Route::resource('/food_tracks', FoodTrackController::class);
