@@ -9,5 +9,5 @@ class Target extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name','target_amount'];
+    protected $fillable = ['name','target_amount','date'];
 }
