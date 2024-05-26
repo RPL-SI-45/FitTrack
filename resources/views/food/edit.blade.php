@@ -1,4 +1,5 @@
-@include('layout.app')
+@include('layout.app', ['class' => 'd-flex flex-column min-vh-100'])
+@include('layout.navbar')
 <div class="container mt-4 flex-grow-1">
     <h2>Edit Data Makanan</h2>
     @if (session('success'))
@@ -24,6 +25,10 @@
             <input type="number" class="form-control" name="calories" value="{{ $calories }}">
             @error('calories') <p class="text-danger text-xs pt-1"> {{$message}} </p>@enderror
         </div>
-        <button type="submit" class="btn btn-primary">Edit</button>
+        <div class="d-flex justify-content-between">
+            <a href="{{ route('food') }}" class="btn btn-success">Lihat List</a> <!-- Tombol dipindahkan ke sini -->
+            <button type="submit" class="btn btn-primary">Edit</button>
+        </div>
     </form>
 </div>
+@include('layout.footer')
