@@ -30,6 +30,12 @@ Route::post('/food/edit/{id}', [FoodController::class, 'update'])->name('food.ed
 Route::get('/food/delete/{id}', [FoodController::class, 'delete'])->name('food.delete');
 Route::get('/homepage', function () { return view ('homepage'); })->name('home');
 
+/* drink Track */
+Route::resource('targets', TargetController::class);
+Route::resource('daily_targets', DailyTargetController::class);
+Route::get('daily_targets/{dailyTarget}/record_intake', [DailyTargetController::class, 'recordIntake'])->name('daily_targets.recordIntake');
+Route::post('daily_targets/{dailyTarget}/store_intake', [DailyTargetController::class, 'storeIntake'])->name('daily_targets.storeIntake');
+
 /* FitHealth */
 Route::any('/', function () {
     return view('mainpage');
