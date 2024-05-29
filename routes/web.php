@@ -30,6 +30,8 @@ Route::post('/food/edit/{id}', [FoodController::class, 'update'])->name('food.ed
 Route::get('/food/delete/{id}', [FoodController::class, 'delete'])->name('food.delete');
 Route::get('/homepage', function () { return view ('homepage'); })->name('home');
 
+/*  */
+
 /* FitHealth */
 Route::any('/', function () {
     return view('mainpage');
