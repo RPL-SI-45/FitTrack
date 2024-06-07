@@ -1,0 +1,66 @@
+{
+  "menu": [
+    {
+      "url": "/",
+      "role": "user",
+      "name": "Dashboards",
+      "icon": "menu-icon tf-icons mdi mdi-home-outline",
+      "slug": "dashboard",
+
+      "submenu": [
+        {
+          "url": "/",
+          "name": "Analytics",
+          "slug": "dashboard-analytics"
+        }
+      ]
+    },
+    {
+      "name": "Features",
+      "role": "user",
+      "icon": "menu-icon tf-icons mdi mdi-window-maximize",
+      "slug": "content",
+      "submenu": [
+        {
+          "url": "content/bmi",
+          "name": "BMI Calculator",
+          "slug": "create"
+        },
+        {
+          "url": "content/waterintake",
+          "name": "Drink Track",
+          "slug": "drinktarget"
+        },
+        {
+          "url": "content/foodtrack",
+          "name": "Food Track",
+          "slug": "index"
+        },
+        {
+          "url": "content/obat",
+          "name": "Medication Reminder",
+          "slug": "index"
+        },
+        {
+          "url": "content/artikel",
+          "name": "Articles",
+          "slug": "index"
+        }
+      ]
+    },
+    {
+      "url": "admin/foodtrack",
+      "name": "Food Track",
+      "icon": "menu-icon tf-icons mdi mdi-account-circle-outline",
+      "role": "admin",
+      "slug": "index"
+    },
+    {
+      "url": "admin/artikel",
+      "name": "Artikel",
+      "icon": "menu-icon tf-icons mdi mdi-account-circle-outline",
+      "role": "admin",
+      "slug": "index"
+    }
+  ]
+}

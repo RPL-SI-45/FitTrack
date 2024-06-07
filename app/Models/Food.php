@@ -7,11 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Food extends Model
 {
-    protected $table = "foods";
+    use HasFactory;
 
     protected $fillable = [
-        'name',
-        'protein',
-        'calories',
+        'jenis_makanan',
+        'nama_menu',
+        'kalori',
+        'tanggal_makan',
+        'waktu_makan',
     ];
 }
