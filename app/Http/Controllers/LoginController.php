@@ -16,8 +16,8 @@ class LoginController extends Controller
             'email'=>'required',
             'password'=>'required'
         ],[
-            'email.required'=>'Email Wajib Diisi', 
-            'password.required'=>'Password Wajib Diisi', 
+            'email.required'=>'Email Wajib Diisi',
+            'password.required'=>'Password Wajib Diisi',
         ]);
 
         $email = $request->input('email'); // Definisikan variabel $email dengan nilai dari inputan formulir
@@ -25,7 +25,7 @@ class LoginController extends Controller
 
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
             // Otentikasi berhasil, lakukan sesuatu di sini
-            return redirect()->intended('/homepage');
+            return redirect()->intended('/');
         } else {
             // Otentikasi gagal, tampilkan pesan kesalahan
             return redirect('sesi')->withErrors('Email atau Password yang diinputkan salah');

@@ -2,51 +2,55 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\BmiRecord;
-use App\Models\body_mass_indices;
 use App\Models\BodyMassIndex;
 
 class BmiController extends Controller
 {
-    public function create()
+    public function index()
     {
-        return view('bmi.create');
+        return view('content.bmi.create');
     }
 
     public function calculate(Request $request)
     {
-        $validatedData = $request->validate([
-            'weight' => 'required|numeric',
-            'height' => 'required|numeric',
-            'age' => 'required|numeric',
-            'activity_level' => 'required',
+        // Validasi input
+        $request->validate([
+            'height' => 'required|numeric|min:0',
+            'weight' => 'required|numeric|min:0',
         ]);
 
-        // Simpan data ke dalam database
-        $weight = $validatedData['weight'];
-        $height = $validatedData['height'] / 100; // converting to meters
-        $bmi = $weight / ($height * $height);
+        // Ambil data dari request
+        $height = $request->input('height');
+        $weight = $request->input('weight');
 
+        // Hitung BMI
+        $bmi = $weight / (($height / 100) * ($height / 100));
+
+        // Tentukan status BMI
         if ($bmi < 18.5) {
-            $category = 'Underweight';
-        } else if ($bmi < 24.9) {
-            $category = 'Normal weight';
-        } else if ($bmi < 29.9) {
-            $category = 'Overweight';
+            $status = "Underweight";
+        } elseif ($bmi >= 18.5 && $bmi <= 24.9) {
+            $status = "Normal weight";
+        } elseif ($bmi >= 25 && $bmi <= 29.9) {
+            $status = "Overweight";
         } else {
-            $category = 'Obese';
+            $status = "Obese";
         }
 
-        $bmiRecord = BodyMassIndex::create([
-            'weight' => $weight,
-            'height' => $validatedData['height'],
-            'age' => $validatedData['age'],
-            'activity_level' => $validatedData['activity_level'],
-            'bmi' => $bmi,
-            'category' => $category,
-            ]);
+        // Simpan data ke database
+        $bmiRecord = new BodyMassIndex();
+        $bmiRecord->height = $height;
+        $bmiRecord->weight = $weight;
+        $bmiRecord->bmi = $bmi;
+        $bmiRecord->status = $status;
+        $bmiRecord->save();
 
-        return view('bmi.result', compact('bmi', 'category'));
+        // Kembalikan respons JSON
+        return response()->json([
+            'bmi' => $bmi,
+            'status' => $status
+        ]);
     }
 }
