@@ -51,7 +51,6 @@
                                                 Aksi
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="actionDropdown{{ $article->id }}">
-                                                <a class="dropdown-item" href="{{ route('admin.artikel.show', $article->id) }}">Lihat</a>
                                                 <a class="dropdown-item" href="{{ route('admin.artikel.edit', $article->id) }}">Edit</a>
                                                 <form action="{{ route('admin.artikel.destroy', $article->id) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
                                                     @csrf
