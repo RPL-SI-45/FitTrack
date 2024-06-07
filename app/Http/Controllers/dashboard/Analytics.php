@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\dashboard;
 
-use App\Http\Controllers\Controller;
+use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
 use App\Models\BodyMassIndex;
 use App\Models\Food;
 use App\Models\WaterIntake;
 use App\Models\Obat;
 
-class Analytics extends Controller
+class Analytics extends BaseController
 {
     public function index()
     {

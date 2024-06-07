@@ -99,6 +99,15 @@
             padding: 15px;
         }
 
+        .alert-danger {
+            margin-bottom: 20px;
+            border-radius: 20px;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
+            padding: 15px;
+        }
+
         .register-link, .forgot-password-link {
             display: block;
             text-align: center;

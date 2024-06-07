@@ -12,13 +12,13 @@ class AdminFoodtrack extends Controller
     public function index()
     {
     $foods = AdminFood::all();
-    return view('content.admin.foodtrack.index', compact('foods'));
+    return view('admin.foodtrack.index', compact('foods'));
     }
 
     // Menampilkan form untuk membuat data baru
     public function create()
     {
-        return view('content.admin.foodtrack.create');
+        return view('admin.foodtrack.create');
     }
 
     // Menyimpan data baru
@@ -42,14 +42,14 @@ class AdminFoodtrack extends Controller
         $foodTrack->kalori_minuman = $request->kalori_minuman;
         $foodTrack->save();
 
-        return redirect()->route('content.admin.foodtrack.index')->with('success', 'Menu berhasil ditambahkan.');
+        return redirect()->route('admin.foodtrack.index')->with('success', 'Menu berhasil ditambahkan.');
     }
 
     public function edit($id)
     {
     $foodTrack = AdminFood::findOrFail($id);
     $menu = AdminFood::all();
-    return view('content.admin.foodtrack.edit', compact('foodTrack', 'menu'));
+    return view('admin.foodtrack.edit', compact('foodTrack', 'menu'));
     }
 
     // Mengupdate data
@@ -73,7 +73,7 @@ class AdminFoodtrack extends Controller
         $foodTrack->kalori_minuman = $request->kalori_minuman;
         $foodTrack->save();
 
-        return redirect()->route('content.admin.foodtrack.index')->with('success', 'Menu berhasil diperbarui.');
+        return redirect()->route('admin.foodtrack.index')->with('success', 'Menu berhasil diperbarui.');
     }
 
     // Menghapus data
@@ -82,6 +82,6 @@ class AdminFoodtrack extends Controller
         $foodTrack = AdminFood::findOrFail($id);
         $foodTrack->delete();
 
-        return redirect()->route('content.admin.foodtrack.index')->with('success', 'Menu berhasil dihapus.');
+        return redirect()->route('admin.foodtrack.index')->with('success', 'Menu berhasil dihapus.');
     }
 }

@@ -4,15 +4,17 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\Authenticate;
 
 use App\Http\Controllers\dashboard\Analytics;
-use App\Http\Controllers\BmiController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\ObatController;
+use App\Http\Controllers\layouts\BmiController;
+use App\Http\Controllers\layouts\LoginController;
+use App\Http\Controllers\layouts\AuthController;
+use App\Http\Controllers\layouts\UserController;
+use App\Http\Controllers\layouts\ObatController;
 use App\Http\Controllers\layouts\FoodTrack;
-use App\Http\Controllers\WaterIntakeController;
-use App\Http\Controllers\Admin\Dashboard as AdminDashboard;
+use App\Http\Controllers\layouts\WaterIntakeController;
 use App\Http\Controllers\Admin\AdminFoodTrack;
+use App\Http\Controllers\Admin\adminArtikel;
+use App\Http\Controllers\ArtikelController;
+
 
 // Session routes
 Route::any('/sesi/login', [LoginController::class, 'login']);
@@ -51,16 +53,35 @@ Route::middleware(['auth'])->group(function () {
 
         // API route for fetching menu data based on jenis makanan
         Route::get('/api/menu-data/{jenisMakanan}', [FoodTrack::class, 'getMenuData']);
+
+        // artikel
+        Route::get('/content/artikel', [ArtikelController::class, 'index'])->name('content.artikel.index');
+        Route::get('/artikel/search', [ArtikelController::class, 'index'])->name('artikel.search');
+        Route::put('/artikel/{id}', 'ArtikelController@update')->name('artikel.update');
+
+
     });
 
     // Routes for role admin
     Route::middleware(['role:admin'])->group(function () {
-      Route::get('content/admin/foodtrack', [AdminFoodTrack::class, 'index'])->name('content.admin.foodtrack.index');
-      Route::get('content/admin/foodtrack/create', [AdminFoodTrack::class, 'create'])->name('content.admin.foodtrack.create');
-      Route::post('content/admin/foodtrack/store', [AdminFoodTrack::class, 'store'])->name('content.admin.foodtrack.store');
-      Route::get('content/admin/foodtrack/{foodTrack}/edit', [AdminFoodTrack::class, 'edit'])->name('content.admin.foodtrack.edit');
-      Route::put('content/admin/foodtrack/{foodTrack}', [AdminFoodTrack::class, 'update'])->name('content.admin.foodtrack.update');
-      Route::delete('content/admin/foodtrack/{foodTrack}', [AdminFoodTrack::class, 'destroy'])->name('content.admin.foodtrack.destroy');
+      Route::get('/admin/foodtrack', [AdminFoodTrack::class, 'index'])->name('admin.foodtrack.index');
+      Route::get('/admin/foodtrack/create', [AdminFoodTrack::class, 'create'])->name('admin.foodtrack.create');
+      Route::post('/admin/foodtrack/store', [AdminFoodTrack::class, 'store'])->name('admin.foodtrack.store');
+      Route::get('/admin/foodtrack/{foodTrack}/edit', [AdminFoodTrack::class, 'edit'])->name('admin.foodtrack.edit');
+      Route::put('/admin/foodtrack/{foodTrack}', [AdminFoodTrack::class, 'update'])->name('admin.foodtrack.update');
+      Route::delete('/admin/foodtrack/{foodTrack}', [AdminFoodTrack::class, 'destroy'])->name('admin.foodtrack.destroy');
+
+      Route::resource('/admin/artikel', adminArtikel::class, ['as' => 'admin']);
+      Route::get('/admin/artikel', [adminArtikel::class, 'index'])->name('admin.artikel.index');
+      Route::get('/admin/artikel/create', [adminArtikel::class, 'create'])->name('admin.artikel.create');
+      Route::post('/admin/artikel', [adminArtikel::class, 'store'])->name('admin.artikel.store');
+      Route::get('/admin/artikel/{id}/edit', [adminArtikel::class, 'edit'])->name('admin.artikel.edit');
+      Route::delete('/admin/artikel/{id}', [adminArtikel::class, 'destroy'])->name('admin.artikel.destroy');
+      Route::put('admin/artikel/{id}', 'ArtikelController@update')->name('artikel.update');
+
+
+
+
 
         // Admin routes can be defined here
     });

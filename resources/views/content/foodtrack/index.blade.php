@@ -71,7 +71,7 @@
                         <h5>Total Kalori: {{ $totalKalori }} cal</h5>
                         <div class="mb-3">
                             <a href="{{ route('content.foodtrack.create') }}" class="btn btn-primary">
-                                <i class="mdi mdi-plus"></i> Tambah
+                                <i class="mdi mdi-plus"></i>
                             </a>
                         </div>
                     </div>
