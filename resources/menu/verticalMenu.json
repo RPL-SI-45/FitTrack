@@ -6,7 +6,6 @@
       "name": "Dashboards",
       "icon": "menu-icon tf-icons mdi mdi-home-outline",
       "slug": "dashboard",
-
       "submenu": [
         {
           "url": "/",
@@ -16,37 +15,43 @@
       ]
     },
     {
-      "name": "Features",
+      "menuHeader": "Feature Us",
+      "role": "user"
+    },
+    {
+      "url": "content/bmi",
       "role": "user",
-      "icon": "menu-icon tf-icons mdi mdi-window-maximize",
-      "slug": "content",
-      "submenu": [
-        {
-          "url": "content/bmi",
-          "name": "BMI Calculator",
-          "slug": "create"
-        },
-        {
-          "url": "content/waterintake",
-          "name": "Drink Track",
-          "slug": "drinktarget"
-        },
-        {
-          "url": "content/foodtrack",
-          "name": "Food Track",
-          "slug": "index"
-        },
-        {
-          "url": "content/obat",
-          "name": "Medication Reminder",
-          "slug": "index"
-        },
-        {
-          "url": "content/artikel",
-          "name": "Articles",
-          "slug": "index"
-        }
-      ]
+      "name": "BMI Calculator",
+      "slug": "create",
+      "icon": "menu-icon tf-icons mdi mdi-circle-small"
+    },
+    {
+      "url": "content/waterintake",
+      "role": "user",
+      "name": "Drink Track",
+      "slug": "drinktarget",
+      "icon": "menu-icon tf-icons mdi mdi-circle-small"
+    },
+    {
+      "url": "content/foodtrack",
+      "role": "user",
+      "name": "Food Track",
+      "slug": "index",
+      "icon": "menu-icon tf-icons mdi mdi-circle-small"
+    },
+    {
+      "url": "content/obat",
+      "role": "user",
+      "name": "Medication Reminder",
+      "slug": "index",
+      "icon": "menu-icon tf-icons mdi mdi-circle-small"
+    },
+    {
+      "url": "content/artikel",
+      "role": "user",
+      "name": "Articles",
+      "slug": "index",
+      "icon": "menu-icon tf-icons mdi mdi-circle-small"
     },
     {
       "url": "admin/foodtrack",
