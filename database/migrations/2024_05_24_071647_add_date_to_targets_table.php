@@ -8,15 +8,13 @@ class AddDateToTargetsTable extends Migration
 {
     public function up()
     {
-        Schema::table('targets', function (Blueprint $table) {
+        Schema::create('targets', function (Blueprint $table) {
             $table->date('date')->nullable(); // Add the date column
         });
     }
 
     public function down()
     {
-        Schema::table('targets', function (Blueprint $table) {
-            $table->dropColumn('date');
-        });
+        Schema::dropIfExists('targets');
     }
 }

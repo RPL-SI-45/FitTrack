@@ -10,7 +10,7 @@ class CreateDailyIntakesTable extends Migration
     {
         Schema::create('daily_intakes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('target_id')->constrained()->onDelete('cascade');
+            $table->foreignId('target_id')->onDelete('cascade');
             $table->integer('amount');
             $table->date('date');
             $table->timestamps();
