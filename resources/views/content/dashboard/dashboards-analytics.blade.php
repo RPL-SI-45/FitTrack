@@ -26,20 +26,20 @@
     <!-- Medication Reminder -->
     <div class="col-md-12 col-lg-12">
         <div class="card card-custom shadow-sm">
-            <div class="card-header" style="background-color: #AD88C6;">
+            <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #AD88C6;">
                 <h5 class="card-title m-0 me-2" style="color: #ffff;">Medication Reminder</h5>
-                <a href="{{ route('content.obat.index') }}" class="btn btn-sm btn-light">View All</a>
+                <a href="{{ route('content.obat.index') }}" class="btn btn-sm btn-light">View Detail</a>
             </div>
-            <div class="card-body">
+            <div class="card-body" style="max-height: 300px; overflow-y: auto;">
                 <div class="row">
                     @foreach($obats as $obat)
-                    <div class="col-md-6 mb-4">
+                    <div class="col-md-3 mb-4">
                         <div class="card bg-light">
                             <div class="card-body text-black">
                                 <h5 class="card-title">{{ $obat->nama_obat }}</h5>
-                                <p class="card-text"><strong>Dosis:</strong> {{ $obat->dosis }}</p>
+                                <p class="card-text"><strong>Dosis:</strong> {{ $obat->dosis }} {{ $obat->satuan }}</p>
                                 <p class="card-text"><strong>Jam Minum:</strong> {{ implode(', ', $obat->jam_minum) }}</p>
-                                <p class="card-text"><strong>Aturan Minum:</strong> {{ $obat->aturan_minum }}</p>
+                                <p class="card-text"><strong>Aturan Minum:</strong> {{ str_replace('_', ' ', $obat->aturan_minum) }}</p>
                             </div>
                         </div>
                     </div>
@@ -55,11 +55,12 @@
         <div class="row">
             <!-- BMI Track -->
             <div class="col-md-4">
-                <div class="card card-custom shadow-sm">
-                    <div class="card-header" style="background-color: #FFD0D0;">
-                        <h5 class="card-title m-0 me-2" style="color: #6c757d;">History BMI</h5>
+                <div class="card card-custom shadow-sm" style="height: 100%;">
+                    <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #83B4FF;">
+                    <h5 class="card-title m-0 me-2 text-white"> History BMI</h5>
+                    <a href="{{ route('content.bmi.create') }}" class="btn btn-sm btn-light">View Detail</a>
                     </div>
-                    <div class="card-body text-black">
+                    <div class="card-body text-black" style="height: calc(100% - 40px); overflow-y: auto;">
                         <div class="row">
                             <div class="col">
                                 <table class="table table-borderless text-center">
@@ -91,8 +92,9 @@
             <!-- Calories Track -->
             <div class="col-md-4">
                 <div class="card card-custom shadow-sm">
-                    <div class="card-header" style="background-color: #FF9EAA;">
+                    <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #FF9EAA;">
                         <h5 class="card-title m-0 me-2 text-white">Calories Today</h5>
+                        <a href="{{ route('content.foodtrack.index') }}" class="btn btn-sm btn-light">View Detail</a>
                     </div>
                     <div class="card-body text-black">
                         <div class="row">
@@ -109,7 +111,9 @@
                                                 <td><h6 class="mb-0">{{$d->nama_menu}}</h6></td>
                                                 <td><h6 class="mb-0">{{$d->kalori}}</h6></td>
                                             </tr>
-                                            @php $totalKalori+= $d->kalori; @endphp
+                                            @php
+                                            $totalKalori+=$d->kalori;
+                                            @endphp
                                         @endforeach
                                         <tr class="align-middle">
                                             <td></td>
@@ -127,8 +131,9 @@
             <!-- Water Intakes Track -->
             <div class="col-md-4">
                 <div class="card card-custom shadow-sm">
-                    <div class="card-header" style="background-color: #3AA6B9;">
+                    <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #3AA6B9;">
                         <h5 class="card-title m-0 me-2 text-white">Drinking Target Today</h5>
+                        <a href="{{ route('drinktarget') }}" class="btn btn-sm btn-light">View Detail</a>
                     </div>
                     <div class="card-body text-black">
                         <div class="row">

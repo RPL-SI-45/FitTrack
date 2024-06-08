@@ -10,7 +10,7 @@
       <div class="card" style="padding: 2rem;">
           <div class="card-header text-center">
               <h4 class="card-title mb-0">Articles</h4>
-              <p class="mb-0">Kumpulan Artikel tentang Kesehatan</p>
+              <p class="mb-0">🌿 Kumpulan Artikel tentang Kesehatan 🌿</p>
           </div>
           <div class="card-body position-relative">
               <div class="table-responsive">
