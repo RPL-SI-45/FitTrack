@@ -14,33 +14,36 @@
 <script src="{{ asset('assets/js/dashboards-analytics.js') }}"></script>
 
 <script>
-  // Update to submit form data to server
-  function calculateBMI() {
-    let height = document.getElementById('height').value;
-    let weight = document.getElementById('weight').value;
+  async function calculateBMI() {
+    let height = parseFloat(document.getElementById('height').value);
+    let weight = parseFloat(document.getElementById('weight').value);
     let gender = document.getElementById('gender').value;
 
     if (height > 0 && weight > 0) {
-      // Send form data to server using AJAX
-      fetch('{{ route('bmi.calculate') }}', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-CSRF-TOKEN': '{{ csrf_token() }}'
-        },
-        body: JSON.stringify({
-          height: height,
-          weight: weight,
-          gender: gender
-        })
-      })
-      .then(response => response.json())
-      .then(data => {
+      try {
+        const response = await fetch('{{ route('bmi.calculate') }}', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': '{{ csrf_token() }}'
+          },
+          body: JSON.stringify({
+            height: height,
+            weight: weight,
+            gender: gender
+          })
+        });
+
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
+        const data = await response.json();
         window.location.href = '{{ route('content.bmi.result') }}?bmi=' + data.bmi.toFixed(2) + '&status=' + data.status;
-      })
-      .catch(error => {
+      } catch (error) {
         console.error('Error:', error);
-      });
+        alert('There was an error calculating your BMI. Please try again.');
+      }
     } else {
       alert("Please enter valid height and weight values.");
     }
@@ -66,22 +69,12 @@
     <div class="card">
       <div class="card-header d-flex align-items-center justify-content-between">
         <h5 class="card-title m-0 me-2">BMI Calculator</h5>
-        <div class="dropdown">
-          <button class="btn p-0" type="button" id="bmiCalculatorOptions" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="mdi mdi-dots-vertical mdi-24px"></i>
-          </button>
-          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="bmiCalculatorOptions">
-            <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
-            <a class="dropdown-item" href="javascript:void(0);">Share</a>
-            <a class="dropdown-item" href="javascript:void(0);">Update</a>
-          </div>
-        </div>
       </div>
       <div class="card-body">
         <!-- Explanation of BMI -->
         <p>Body Mass Index (BMI) adalah cara menghitung berat badan ideal berdasarkan tinggi dan berat badan.</p>
 
-        <!-- Update form to include onsubmit event -->
+        <!-- Form for BMI calculation -->
         <form onsubmit="event.preventDefault(); calculateBMI();">
           <!-- Gender selection -->
           <div class="mb-3">
@@ -117,7 +110,7 @@
 
 <!-- Back Dashboard -->
 <div class="layout-demo-wrapper">
-    <button class="btn btn-primary" type="button" onclick="history.back()">Back</button>
+  <button class="btn btn-primary" type="button" onclick="history.back()">Back</button>
 </div>
 <!--/ Back Dashboard -->
 

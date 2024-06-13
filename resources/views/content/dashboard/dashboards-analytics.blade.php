@@ -1,4 +1,4 @@
-@extends('layouts/contentNavbarLayout')
+@extends('layouts.contentNavbarLayout')
 
 @section('title', 'Dashboard')
 
@@ -131,7 +131,7 @@
             <!-- Water Intakes Track -->
             <div class="col-md-4">
                 <div class="card card-custom shadow-sm">
-                    <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #3AA6B9;">
+                    <div class="card-header d-flex justify-content-between align-items <center" style="background-color: #3AA6B9;">
                         <h5 class="card-title m-0 me-2 text-white">Drinking Target Today</h5>
                         <a href="{{ route('drinktarget') }}" class="btn btn-sm btn-light">View Detail</a>
                     </div>
@@ -167,5 +167,34 @@
         </div>
     </div>
     <!--/ Combined Cards Row -->
+
+    <!-- Articles -->
+    <div class="col-md-12">
+        <div class="card card-custom shadow-sm">
+            <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #006989;">
+                <h5 class="card-title m-0 me-2 text-white">Artikel</h5>
+                <a href="{{ route('content.artikel.index') }}" class="btn btn-sm btn-light">View All</a>
+            </div>
+            <div class="card-body" style="max-height: 300px; overflow-y: auto;">
+                @if($articles->isEmpty())
+                    <p class="text-center">No articles found.</p>
+                @else
+                    <ul class="list-group list-group-flush">
+                        @foreach($articles as $article)
+                            <li class="list-group-item">
+                                <h6 class="card-title">{{ $article->title }}</h6>
+                                <p class="card-text">{{ Str::limit($article->content, 150) }}</p>
+                                <p class="card-text"><strong>Author:</strong> {{ $article->author }}</p>
+                                <p class="card-text"><strong>Year:</strong> {{ $article->year }}</p>
+                                <p class="card-text"><strong>Category:</strong> {{ $article->category }}</p>
+                            </li>
+                        @endforeach
+                    </ul>
+                @endif
+            </div>
+        </div>
+    </div>
+    <!--/ Articles -->
 </div>
 @endsection
+

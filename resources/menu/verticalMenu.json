@@ -54,16 +54,20 @@
       "icon": "menu-icon tf-icons mdi mdi-circle-small"
     },
     {
+      "menuHeader": "Feature Admin",
+      "role": "admin"
+    },
+    {
       "url": "admin/foodtrack",
       "name": "Food Track",
-      "icon": "menu-icon tf-icons mdi mdi-account-circle-outline",
+      "icon": "menu-icon tf-icons mdi mdi-circle-small",
       "role": "admin",
       "slug": "index"
     },
     {
       "url": "admin/artikel",
       "name": "Artikel",
-      "icon": "menu-icon tf-icons mdi mdi-account-circle-outline",
+      "icon": "menu-icon tf-icons mdi mdi-circle-small",
       "role": "admin",
       "slug": "index"
     }

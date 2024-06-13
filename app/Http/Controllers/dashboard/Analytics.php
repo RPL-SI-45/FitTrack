@@ -8,6 +8,7 @@ use App\Models\BodyMassIndex;
 use App\Models\Food;
 use App\Models\WaterIntake;
 use App\Models\Obat;
+use App\Models\Artikel; // Tambahkan model Artikel
 
 class Analytics extends BaseController
 {
@@ -35,10 +36,13 @@ class Analytics extends BaseController
         // Ambil data obat
         $obats = Obat::orderBy('id', 'desc')->limit(5)->get();
 
+        // Ambil data artikel
+        $articles = Artikel::orderBy('id', 'desc')->limit(5)->get(); // Ubah sesuai model dan nama kolomnya
+
         // Kirim semua data ke view dashboard
         return view(
             "content.dashboard.dashboards-analytics",
-            compact("bmiData", "foodTrack", "waterIntakeData", "obats")
+            compact("bmiData", "foodTrack", "waterIntakeData", "obats", "articles") // Tambahkan $articles ke dalam compact
         );
     }
 }

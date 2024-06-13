@@ -8,7 +8,7 @@
         <div class="card" style="padding: 2rem;">
             <div class="card-header text-center">
                 <h4 class="card-title mb-0">Food Track</h4>
-                <p class="mb-0">Daftar makanan yang telah dikonsumsi 📅</p>
+                <p class="mb-0">📅 Daftar makanan yang telah dikonsumsi 📅</p>
             </div>
             <div class="card-body">
                 @if(session('success'))

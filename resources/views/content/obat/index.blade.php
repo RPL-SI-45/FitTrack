@@ -8,7 +8,7 @@
         <div class="card" style="padding: 2rem;">
             <div class="card-header text-center">
                 <h4 class="card-title mb-0">Medication Remember</h4>
-                <p class="mb-0">Catat obat yang dikonsumsi dan buat pengingat ⏰</p>
+                <p class="mb-0">⏰ Catat obat yang dikonsumsi dan buat pengingat ⏰</p>
             </div>
             <div class="card-body position-relative">
                 <div class="table-responsive">
