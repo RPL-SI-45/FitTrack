@@ -8,7 +8,7 @@
         <div class="card">
             <div class="card-header text-center">
                 <h4 class="card-title mb-0">Tambah Artikel</h4>
-                <p class="mb-0">Tambahkan Data Artikel 📅</p>
+                <p class="mb-0">🖋 Tambahkan Data Artikel 🖋</p>
             </div>
             <div class="card-body">
                 <form action="{{ route('admin.artikel.store') }}" method="POST">
